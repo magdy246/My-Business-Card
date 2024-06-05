@@ -1,0 +1,174 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: grid;
+    place-items: center;
+    background-image: url(background/img1.jpg);
+}
+
+:root {
+    --cl-1: #010038;
+    --cl-2: #293A80;
+    --cl-3: #537EC5;
+    --cl-4: #F39422;
+    --cl-5: #010038;
+    --main-color: #fff;
+    --black-color: #000;
+    --secondry-1-color: #222;
+    --secondry-2-color: #575757;
+    --black-bg-color: rgba(0, 0, 0, 0.1);
+}
+
+::selection
+{
+    color: var(--main-color);
+    background-color: var(--black-color);
+}
+
+a{
+    text-decoration: none;
+}
+
+.My-Card {
+    background-color: var(--main-color);
+    position: relative;
+    top: 2cm;
+    border-radius: 50px;
+    box-shadow: 0px 10px 15px -3px var(--black-bg-color);
+    width: 15cm;
+    height: 12cm;
+    border-top: 3cm solid;
+    text-align: center;
+}
+
+.My-Card::before,
+.My-Card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: conic-gradient(from var(--gard-angle),
+            var(--cl-1),
+            var(--cl-2),
+            var(--cl-3),
+            var(--cl-4),
+            var(--cl-2),
+            var(--cl-3),
+            var(--cl-4),
+            var(--cl-2),
+            var(--cl-3),
+            var(--cl-4),
+            var(--cl-2),
+            var(--cl-3),
+            var(--cl-4));
+    border-bottom-left-radius: inherit;
+    border-bottom-right-radius: inherit;
+    animation: rotate 3s linear infinite;
+}
+
+.My-Card::after {
+    filter: blur(1.5rem);
+}
+
+@keyframes rotate {
+    0% {
+        --gard-angle: 0deg;
+    }
+
+    100% {
+        --gard-angle: 360deg;
+    }
+}
+
+@property --gard-angle {
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+}
+
+
+.my-name {
+    font-family: "Glegoo", serif;
+    font-weight: 900;
+    font-size: xx-large;
+    position: relative;
+    bottom: 1.3cm;
+}
+
+.my-job {
+    font-family: "Suwannaphum", serif;
+    font-weight: 500;
+    position: relative;
+    bottom: 1.2cm;
+}
+
+.My-Card img {
+    position: relative;
+    bottom: 1.5cm;
+    width: 20%;
+    border-radius: 50%;
+}
+
+.Icons li {
+    cursor: pointer;
+    list-style-type: none;
+    font-size: 1rem;
+}
+
+.Icons-Style {
+    color: var(--main-color);
+}
+
+.Icons {
+    margin: 4px;
+    position: relative;
+    bottom: 0.8cm;
+    border: 0px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--black-color);
+}
+
+.style-send-me {
+    cursor: pointer;
+    font-size: 18px;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: 700;
+    letter-spacing: 1px;
+    background: var(--secondry-1-color);
+    color: var(--main-color);
+    text-decoration: none;
+    border: 20px solid var(--secondry-1-color);
+    border-radius: 230px;
+    transition: all 0.6s;
+}
+.style-send-me:hover {
+    background: #ccc;
+    color: var(--black-color);
+    border: 20px solid #ccc;
+}
+
+.footer {
+    display: inline-block;
+    position: relative;
+    top: 1cm;
+    color: var(--secondry-2-color);
+    list-style: none;
+}
+
+@media (max-width: 640px) {
+    div.My-Card {
+        top: 4cm;
+        width: 10cm;
+        height: 11cm;
+    }
+
+    .My-Card img {
+        bottom: 1.2cm;
+    }
+}
