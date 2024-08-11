@@ -223,7 +223,7 @@ a {
     background: var(--secondry-1-color);
     color: var(--main-color);
     text-decoration: none;
-    border: 20px solid var(--secondry-1-color);
+    border: 15px solid var(--secondry-1-color);
     border-radius: 230px;
     transition: var(--all-transition);
 }
@@ -231,7 +231,7 @@ a {
 .style-send-me:hover {
     background: var(--hover-color);
     color: var(--black-color);
-    border: 20px solid var(--hover-color);
+    border: 15px solid var(--hover-color);
 }
 
 .footer {
